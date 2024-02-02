@@ -16,7 +16,7 @@ const CalculatorBody = () => {
         } else {
             setValue('' + value + data);
         }
-        console.log('Input: ' + value);
+        console.log('Input = ' + value);
     };
 
     const handleClear = () => {
@@ -28,18 +28,18 @@ const CalculatorBody = () => {
         setOperator('' + data);
         setPrevValue(value);
         handleClear();
-        console.log('Operator: ' + operator);
+        console.log('Operator = ' + operator);
     };
 
     const handleCalculate = (data) => {
         let result = Calculate(prevValue, operator, value);
         setValue(result);
+        console.log('Result = ' + result);
     };
 
     // Render
     return ( 
         <section id='Calculator' className='mx-auto p-6 w-full sm:w-3/4 max-w-2xl rounded-lg bg-light-blue'>
-            {/* <h1 className='text-center text-4xl pb-6 font-bold'>Calculator</h1> */}
             <CalculatorScreen value={value} />
             <CalculatorPad 
                 input={handleInput} 
