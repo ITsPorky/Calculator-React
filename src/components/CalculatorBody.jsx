@@ -8,6 +8,7 @@ const CalculatorBody = () => {
     const [value, setValue] = useState(0);
     const [prevValue, setPrevValue] = useState(0);
     const [operator, setOperator] = useState(0);
+    const [negative, setNegative] = useState(0);
 
     // Handlers
     const handleInput = (data) => {
@@ -31,6 +32,14 @@ const CalculatorBody = () => {
         console.log('Operator = ' + operator);
     };
 
+    const handleNegative = (data) => {
+        if(value[0] === '-') {
+            setValue(value.slice(-(value.length-1)));
+        } else {
+            setValue('-' + value);
+        }
+    };
+
     const handleCalculate = (data) => {
         let result = Calculate(prevValue, operator, value);
         setValue(result);
@@ -43,9 +52,10 @@ const CalculatorBody = () => {
             <CalculatorScreen value={value} />
             <CalculatorPad 
                 input={handleInput} 
-                evaluate={handleCalculate} 
                 operator={handleOperator} 
                 clear={handleClear}
+                negative={handleNegative}
+                calculate={handleCalculate} 
             />
         </section>
     );
