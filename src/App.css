@@ -4,10 +4,11 @@
   --font-rubik: "Rubik", sans-serif;
   --font-icons: "Font Awesome 6 Free";
   --deep-blue: #072433;
-  --light-blue: #61C1C0;
-  --pink: #B17276;
-  --light-tan: #C3B0A6;
-  --dark-tan: #BEA085;
+  --light-blue: #61c1c0;
+  --pink: #b17276;
+  --pink-dark: #ab5d62;
+  --light-tan: #c3b0a6;
+  --dark-tan: #bea085;
   --white: #fff;
 }
 
@@ -36,6 +37,10 @@ body {
   margin: 5px;
   height: 50px;
   font-weight: 600;
+}
+
+.btn:hover {
+  background: var(--pink-dark);
 }
 
 .bg-deep-blue {
